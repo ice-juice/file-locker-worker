@@ -15,9 +15,12 @@ function esc(s: string): string {
   });
 }
 
-/** 防止内联脚本里出现 script 结束标签。 */
+/**
+ * 防止内联脚本里出现 script 结束标签。
+ * 不能把所有 `<` 换成 `\u003c`：那在字符串里合法，但 `a < b`、`a << b` 会变成非法运算符，整段脚本无法解析，下载按钮就完全没反应。
+ */
 export function inlineScript(js: string): string {
-  return js.replace(/</g, "\\u003c");
+  return js.replace(/<\/script/gi, "<\\/script");
 }
 
 const STYLE = `
