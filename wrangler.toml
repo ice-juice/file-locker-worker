@@ -10,12 +10,12 @@ compatibility_date = "2026-10-01"
 binding = "DB"
 database_name = "file-locker"
 # `wrangler d1 create file-locker` 输出的 database_id 贴到这里。
-database_id = "00000000-0000-0000-0000-000000000000"
+database_id = "e05b62d5-7062-4d81-b3ff-0cdef3d87468"
 migrations_dir = "migrations"
 
 [[r2_buckets]]
 binding = "LOCKER_BUCKET"
-bucket_name = "file-locker"
+bucket_name = "git-account-manage"
 
 [triggers]
 crons = ["* * * * *"]
